@@ -9,8 +9,8 @@ def jogar():
     tentativas = 1
     total_tentativas = 5
 
-    palavra_secreta = "banana".lower()
-    letras_acertadas = len(palavra_secreta) * ['_']
+    palavra_secreta = "onomatopeia".lower()
+    letras_acertadas = ['_' for letra in palavra_secreta]
 
     print("Você tem {} tentativas...".format(total_tentativas))
     print(letras_acertadas)
@@ -41,7 +41,7 @@ def jogar():
     if (acertou):
         print("Parabéns!! Você ganhou!!!")
     else:
-        print("Você perdeu!!!")
+        print("Você perdeu!!!A palavra secreta era {} !".format(palavra_secreta))
 
     print("**FIM DO JOGO**")
 
