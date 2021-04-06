@@ -9,16 +9,32 @@ def jogar():
     tentativas = 1
     total_tentativas = 5
 
-    palavra_secreta = "onomatopeia".lower()
-    letras_acertadas = ['_' for letra in palavra_secreta]
+    palavra_secreta = ["banana","melancia","onomatopeia"]
+
+    # Selecionar dificuldade
+    print("1 - Fácil | 2 - Médio | 3 - Difícil ")
+    dificuldade = int(input("Digite um número de 1 a 3 para selecionar o nível de dificuldade: "))
+
+    if (dificuldade == 1):
+        palavra_secreta = palavra_secreta[0].upper()
+        total_tentativas = 5
+    elif (dificuldade == 2):
+        palavra_secreta = palavra_secreta[1].upper()
+        total_tentativas = 10
+    elif (dificuldade == 3):
+        palavra_secreta = palavra_secreta[2].upper()
+        total_tentativas = 15
+    else:
+        enforcou = True
 
     print("Você tem {} tentativas...".format(total_tentativas))
+    letras_acertadas = ['_' for letra in palavra_secreta]
     print(letras_acertadas)
 
     # main
     while (not enforcou and not acertou):
         chute = input("Qual a letra? ")
-        chute = chute.strip().lower()
+        chute = chute.strip().upper()
 
         if (chute in palavra_secreta):
             posicao = 0
