@@ -1,7 +1,19 @@
+import random
+
 def jogar():
     print("---------------------------------")
     print("***Bem vindo ao jogo de Forca!***")
     print("---------------------------------")
+
+    #Ler arquivo externo
+    arquivo = open("frutas.txt", "r")
+    palavras = []
+
+    for linha in arquivo:
+        linha = linha.strip()
+        palavras.append(linha)
+
+    arquivo.close()
 
     # variaveis
     enforcou = False
@@ -9,21 +21,21 @@ def jogar():
     tentativas = 1
     total_tentativas = 5
 
-    palavra_secreta = ["banana","melancia","onomatopeia"]
+    numero = random.randrange(0, len(palavras))
+    palavra_secreta = palavras[numero].upper()
 
     # Selecionar dificuldade
     print("1 - Fácil | 2 - Médio | 3 - Difícil ")
     dificuldade = int(input("Digite um número de 1 a 3 para selecionar o nível de dificuldade: "))
 
     if (dificuldade == 1):
-        palavra_secreta = palavra_secreta[0].upper()
-        total_tentativas = 5
+        print("Dica: é uma fruta")
+        total_tentativas = 20
     elif (dificuldade == 2):
-        palavra_secreta = palavra_secreta[1].upper()
-        total_tentativas = 10
+        print("Dica: é uma fruta")
+        total_tentativas = 12
     elif (dificuldade == 3):
-        palavra_secreta = palavra_secreta[2].upper()
-        total_tentativas = 15
+        total_tentativas = 8
     else:
         enforcou = True
 
