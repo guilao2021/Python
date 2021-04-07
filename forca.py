@@ -51,6 +51,39 @@ def jogar():
             total_tentativas = 0
             return total_tentativas
 
+    def perdedor(palavra_secreta):
+        print("Você foi enforcado!")
+        print("A palavra secreta era {}".format(palavra_secreta))
+        print("    _______________         ")
+        print("   /               \       ")
+        print("  /                 \      ")
+        print("//                   \/\  ")
+        print("\|   XXXX     XXXX   | /   ")
+        print(" |   XXXX     XXXX   |/     ")
+        print(" |   XXX       XXX   |      ")
+        print(" |                   |      ")
+        print(" \__      XXX      __/     ")
+        print("   |\     XXX     /|       ")
+        print("   | |           | |        ")
+        print("   | I I I I I I I |        ")
+        print("   |  I I I I I I  |        ")
+        print("   \_             _/       ")
+        print("     \_         _/         ")
+        print("       \_______/           ")
+
+    def vencedor():
+        print("Parabéns, você ganhou!")
+        print("       ___________      ")
+        print("      '._==_==_=_.'     ")
+        print("      .-\\:      /-.    ")
+        print("     | (|:.     |) |    ")
+        print("      '-|:.     |-'     ")
+        print("        \\::.    /      ")
+        print("         '::. .'        ")
+        print("           ) (          ")
+        print("         _.' '._        ")
+        print("        '-------'       ")
+
     #main
     bem_vindo()
 
@@ -86,13 +119,12 @@ def jogar():
             print(letras_certas)
 
     if (acertou):
-        print("Parabéns!! Você ganhou!!!")
+        vencedor()
     else:
-        print("Você perdeu!!!A palavra secreta era {} !".format(palavra_secreta))
+        perdedor(palavra_secreta)
 
 if (__name__ == "__main__"):
     jogar()
-
 
 
 
