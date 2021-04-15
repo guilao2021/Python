@@ -83,7 +83,6 @@ def jogar():
         print()
 
     def perdedor(palavra_secreta):
-        print("Você foi enforcado!")
         print("A palavra secreta era {}".format(palavra_secreta))
         print("    _______________         ")
         print("   /               \       ")
@@ -101,9 +100,9 @@ def jogar():
         print("   \_             _/       ")
         print("     \_         _/         ")
         print("       \_______/           ")
+        print("Você foi enforcado!")
 
     def vencedor():
-        print("Parabéns, você ganhou!")
         print("       ___________      ")
         print("      '._==_==_=_.'     ")
         print("      .-\\:      /-.    ")
@@ -114,6 +113,7 @@ def jogar():
         print("           ) (          ")
         print("         _.' '._        ")
         print("        '-------'       ")
+        print("Parabéns, você ganhou!")
 
     #main
     bem_vindo()

@@ -1,7 +1,7 @@
 import random
 
 def jogar():
-    #variaveis
+    # variaveis
     enforcou = False
     acertou = False
     tentativas = 1
@@ -47,12 +47,10 @@ def jogar():
             total_tentativas = 8
             return total_tentativas
         else:
-            enforcou = True
             total_tentativas = 0
             return total_tentativas
 
     def perdedor(palavra_secreta):
-        print("Você foi enforcado!")
         print("A palavra secreta era {}".format(palavra_secreta))
         print("    _______________         ")
         print("   /               \       ")
@@ -70,9 +68,9 @@ def jogar():
         print("   \_             _/       ")
         print("     \_         _/         ")
         print("       \_______/           ")
+        print("Você foi enforcado!")
 
     def vencedor():
-        print("Parabéns, você ganhou!")
         print("       ___________      ")
         print("      '._==_==_=_.'     ")
         print("      .-\\:      /-.    ")
@@ -83,8 +81,9 @@ def jogar():
         print("           ) (          ")
         print("         _.' '._        ")
         print("        '-------'       ")
+        print("Parabéns, você ganhou!")
 
-    #main
+    # main
     bem_vindo()
 
     palavra_secreta = func_palavra_secreta()
@@ -96,27 +95,26 @@ def jogar():
     print("Você tem {} tentativas...".format(total_tentativas))
     print(letras_certas)
 
-    while (not enforcou and not acertou):
-            chute = input("Qual a letra? ")
-            chute = chute.strip().upper()
+    while (not enforcou and not acertou and total_tentativas != 0):
+        chute = pede_chute()
 
-            if (chute in palavra_secreta):
-                posicao = 0
-                for letra in palavra_secreta:
-                    if (chute == letra):
-                        letras_certas[posicao] = letra
-                    posicao += 1
-                print("Acertou a letra! Você tem mais {} tentativa(s)...".format(total_tentativas - tentativas))
-                tentativas += 1
+        if (chute in palavra_secreta):
+            posicao = 0
+            for letra in palavra_secreta:
+                if (chute == letra):
+                    letras_certas[posicao] = letra
+                posicao += 1
+            print("Acertou a letra! Você tem mais {} tentativa(s)...".format(total_tentativas - tentativas))
+            tentativas += 1
 
-            elif(total_tentativas >= 0):
-                print("Você errou e tem mais {} tentativa(s)...".format(total_tentativas - tentativas))
-                tentativas += 1
-            else:
-                tentativas += 1
-            enforcou = tentativas > total_tentativas
-            acertou = '_' not in letras_certas
-            print(letras_certas)
+        elif (total_tentativas >= 0):
+            print("Você errou e tem mais {} tentativa(s)...".format(total_tentativas - tentativas))
+            tentativas += 1
+        else:
+            tentativas += 1
+        enforcou = tentativas > total_tentativas
+        acertou = '_' not in letras_certas
+        print(letras_certas)
 
     if (acertou):
         vencedor()
@@ -125,8 +123,3 @@ def jogar():
 
 if (__name__ == "__main__"):
     jogar()
-
-
-
-
-
