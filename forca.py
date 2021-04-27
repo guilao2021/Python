@@ -47,8 +47,7 @@ def jogar():
             total_tentativas = 8
             return total_tentativas
         else:
-            total_tentativas = 0
-            return total_tentativas
+            raise LookupError("NÍVEL DE DIFICULDADE INVÁLIDA!!")
 
     def perdedor(palavra_secreta):
         print("A palavra secreta era {}".format(palavra_secreta))

@@ -55,9 +55,7 @@ def jogar():
             total_tentativas = 5
             return total_tentativas
         elif (dificuldade < 1 or dificuldade > 3):
-            print("Dificuldade inválida!Jogo Encerrado!!")
-            total_tentativas = 0
-            return total_tentativas
+            raise LookupError("NÍVEL DE DIFICULDADE INVÁLIDA!!")
 
     # Main
     bem_vindo()

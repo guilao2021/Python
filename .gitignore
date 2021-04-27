@@ -1,8 +1,8 @@
 venv
+exercicios
 __pycache__/
 *.idea
 datas.py
 teste.py
 teste2.py
-lista_port.py
-portugal.txt
+
