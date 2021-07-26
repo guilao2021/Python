@@ -26,7 +26,6 @@ marmelo
 nectarina
 pera
 pessego
-physalis
 quina
 seriguela 
 sapoti
