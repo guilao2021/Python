@@ -9,7 +9,7 @@ class Documento:
         elif len(doc) == 14:
             return Cnpj(doc)
         else:
-            raise ValueError("Número de digitos incorreto!!")
+            raise ValueError("Número de digitos incorreto!")
 
 class Cpf:
 
