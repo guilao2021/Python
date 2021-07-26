@@ -103,7 +103,7 @@ def jogar():
                 if (chute == letra):
                     letras_certas[posicao] = letra
                 posicao += 1
-            print("Acertou a letra! Você tem mais {} tentativa(s)...".format(total_tentativas - tentativas))
+            print("Acertou a letra!Você tem mais {} tentativa(s)...".format(total_tentativas - tentativas))
             tentativas += 1
 
         elif (total_tentativas >= 0):
